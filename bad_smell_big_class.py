@@ -1,42 +1,50 @@
-class Warrior:
-  pass
-
-class Healer:
-  pass
-
-class Tree:
-  pass
-
-class Trap:
-  pass
-
 class Skills:
 
   def attack(self):
-    warrior = Warrior()
-    trap = Trap()
+    pass
 
 
   def defense(self):
-    warrior = Warrior()
-    healer = Healer()
-    tree = Tree()
+    pass
 
 
   def move(self):
-    warrior = Warrior()
-    healer = Healer()
+    pass
 
 
   def heal(self):
-    healer = Healer()
+    pass
 
 
   def on_fire(self):
-    tree = Tree()
+    pass
+
+class Warrior:
+  def all_skills(self, skills: Skills):
+    skills.attack()
+    skills.defense()
+    skills.move()
+
+class Healer:
+  def all_skills(self, skills: Skills):
+    skills.heal()
+    skills.defense()
+
+
+class Tree:
+  def all_skills(self, skills: Skills):
+    skills.on_fire()
+    skills.defense()
+
+
+class Trap:
+  def all_skills(self, skills: Skills):
+    skills.attack()
 
 
 if __name__ == '__main__':
     skills = Skills()
-    skills.attack()
-    skills.defense()
+    warrior = Warrior()
+    healer = Healer()
+
+    warrior.all_skills(skills)
